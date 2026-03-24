@@ -4,7 +4,9 @@
     <Platform Name="x64" />
   </Configurations>
   <Folder Name="/解决方案项/" />
-  <Project Path="FNA/FNA.Core.csproj" />
+  <Project Path="FNA/FNA.Core.csproj">
+    <Platform Solution="Debug|x64" Project="x64" />
+  </Project>
   <Project Path="FNAStart/FNAStart.csproj">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
