@@ -1,0 +1,11 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/解决方案项/" />
+  <Project Path="FNA/FNA.Core.csproj" />
+  <Project Path="FNAStart/FNAStart.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+</Solution>

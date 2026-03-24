@@ -1,0 +1,5 @@
+<Project>
+	<PropertyGroup Label="FNA Dll Dependencies">
+		<FAudio_x64_DLL>..\..\fnalibs\x64\FAudio.dll</FAudio_x64_DLL>
+	</PropertyGroup>
+</Project>
