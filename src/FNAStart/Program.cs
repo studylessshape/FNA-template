@@ -1,14 +1,11 @@
-using Microsoft.Xna.Framework;
+using FNAStart;
 
 class Program
 {
     [STAThread]
     static void Main(string[] args)
     {
-        using (Game g = new Game())
-        {
-            new GraphicsDeviceManager(g);
-            g.Run();
-        }
+        using var game = new MainGame();
+        game.Run();
     }
 }
