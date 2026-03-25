@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
@@ -10,7 +10,6 @@
 		<InvariantGlobalization>true</InvariantGlobalization>
 		<Platforms>AnyCPU;x64</Platforms>
 		<BaseFnaLib>..\..\fnalibs</BaseFnaLib>
-		<RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">win-x64</RuntimeIdentifier>
 		<UseCurrentRuntimeIdentifier>true</UseCurrentRuntimeIdentifier>
 	</PropertyGroup>
 	<ItemGroup Condition="'$(RuntimeIdentifier)' == 'win-x86'">
@@ -31,8 +30,10 @@
 		</None>
 		<None Include="$(BaseFnaLib)\libaarch64\*.so" CopyToOutputDirectory="PreserveNewest" />
 	</ItemGroup>
-	<ItemGroup Condition="$(RuntimeIdentifier.Contains('osx'))">
-		<None Include="$(BaseFnaLib)\osx\*.dylib" CopyToOutputDirectory="PreserveNewest" />
+    <ItemGroup Condition="$(RuntimeIdentifier.Contains('osx'))">
+		<None Include="$(BaseFnaLib)\osx\*.dylib" CopyToOutputDirectory="PreserveNewest">
+			<Link>$([System.Text.RegularExpressions.Regex]::Replace('%(FileName)', '\.\d+$', ''))%(Extension)</Link>
+		</None>
 	</ItemGroup>
 	<ItemGroup Condition="$(RuntimeIdentifier.Contains('ios'))">
 		<None Include="$(BaseFnaLib)\iphoneos\*.a" CopyToOutputDirectory="PreserveNewest" />
