@@ -27,5 +27,5 @@ Then download CI artifacts and decompressed in [fnalibs](./fnalibs) folder.
 
 > If use `sdl2`, replace the `sdl3` to `sdl2`
 
-- `Debug` or `Run`: use Visual Studio or dotnet-cli by `dotnet run`
-- `Publish`: use Visual Studio or dotnet-cli by `dotnet publish`
+- `Debug` or `Run`: dotnet-cli by `dotnet run`
+- `Publish`: dotnet-cli by `dotnet publish`
