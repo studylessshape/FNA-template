@@ -23,11 +23,13 @@
 		<None Include="$(BaseFnaLib)\lib64\*.so.0" CopyToOutputDirectory="PreserveNewest">
 			<Link>%(FileName)</Link>
 		</None>
+		<None Include="$(BaseFnaLib)\lib64\*.so" CopyToOutputDirectory="PreserveNewest" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(RuntimeIdentifier)' == 'linux-arm64'">
 		<None Include="$(BaseFnaLib)\libaarch64\*.so.0" CopyToOutputDirectory="PreserveNewest">
 			<Link>%(FileName)</Link>
 		</None>
+		<None Include="$(BaseFnaLib)\libaarch64\*.so" CopyToOutputDirectory="PreserveNewest" />
 	</ItemGroup>
 	<ItemGroup Condition="$(RuntimeIdentifier.Contains('osx'))">
 		<None Include="$(BaseFnaLib)\osx\*.dylib" CopyToOutputDirectory="PreserveNewest" />
