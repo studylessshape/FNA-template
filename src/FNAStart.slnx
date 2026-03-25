@@ -3,7 +3,9 @@
     <Platform Name="Any CPU" />
     <Platform Name="x64" />
   </Configurations>
-  <Folder Name="/解决方案项/" />
+  <Folder Name="/SolutionItems/">
+    <File Path=".gitignore" />
+  </Folder>
   <Project Path="FNA/FNA.Core.csproj">
     <Platform Solution="Debug|x64" Project="x64" />
   </Project>

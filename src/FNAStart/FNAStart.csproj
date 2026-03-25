@@ -2,23 +2,38 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
+		<OutputType Condition="'$(Configuration)' == 'Release'">WinExe</OutputType>
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PublishAot>true</PublishAot>
 		<InvariantGlobalization>true</InvariantGlobalization>
 		<Platforms>AnyCPU;x64</Platforms>
+		<BaseFnaLib>..\..\fnalibs</BaseFnaLib>
+		<RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">win-x64</RuntimeIdentifier>
 	</PropertyGroup>
-	<PropertyGroup>
-		<BaseFnaLib>..\..\fnalibs\$(PlatformTarget)</BaseFnaLib>
-	</PropertyGroup>
-	<ItemGroup>
-		<Content Include="$(BaseFnaLib)\FAudio.dll" CopyToOutputDirectory="PreserveNewest" />
-		<Content Include="$(BaseFnaLib)\FNA3D.dll" CopyToOutputDirectory="PreserveNewest" />
-		<Content Include="$(BaseFnaLib)\libtheorafile.dll" CopyToOutputDirectory="PreserveNewest" />
-		<Content Include="$(BaseFnaLib)\SDL3.dll" CopyToOutputDirectory="PreserveNewest" />
+	<ItemGroup Condition="'$(RuntimeIdentifier)' == 'win-x86'">
+		<None Include="$(BaseFnaLib)\x86\*.dll" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(RuntimeIdentifier)' == 'win-x64'">
+		<None Include="$(BaseFnaLib)\x64\*.dll" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(RuntimeIdentifier)' == 'linux-x64'">
+		<None Include="$(BaseFnaLib)\lib64\*.so.0" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(RuntimeIdentifier)' == 'linux-arm64'">
+		<None Include="$(BaseFnaLib)\libaarch64\*.so.0" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+	<ItemGroup Condition="$(RuntimeIdentifier.Contains('osx'))">
+		<None Include="$(BaseFnaLib)\osx\*.dylib" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+	<ItemGroup Condition="$(RuntimeIdentifier.Contains('ios'))">
+		<None Include="$(BaseFnaLib)\iphoneos\*.a" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+	<ItemGroup Condition="$(RuntimeIdentifier.Contains('tvos'))">
+		<None Include="$(BaseFnaLib)\appletvos\*.a" CopyToOutputDirectory="PreserveNewest" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\FNA\FNA.Core.csproj" />
+		<ProjectReference Include="..\FNA\FNA.Core.csproj" />
 	</ItemGroup>
 </Project>
