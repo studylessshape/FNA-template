@@ -854,3 +854,8 @@ FodyWeavers.xsd
 .msm
 .msp
 *.user
+
+# If you want to keep content directory, remove or comment the next line
+*/Content/**
+!Content/.gitkeep
+!Content/Readme.md
