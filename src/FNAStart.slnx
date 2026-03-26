@@ -5,6 +5,7 @@
   </Configurations>
   <Folder Name="/SolutionItems/">
     <File Path=".gitignore" />
+    <File Path="FNA.Settings.props" />
   </Folder>
   <Project Path="FNA/FNA.Core.csproj">
     <Platform Solution="Debug|x64" Project="x64" />
