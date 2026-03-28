@@ -41,10 +41,10 @@
 		<None Include="$(BaseFnaLib)\appletvos\*.a" CopyToOutputDirectory="PreserveNewest" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\FNA\FNA.Core.csproj" />
+		<ProjectReference Include="..\..\reference\FNA\FNA.Core.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<Content Include="Content\*" CopyToOutputDirectory="PreserveNewest" />
-		<Content Remove="Content\.gitkeep"/>
+		<Content Remove="Content\.gitkeep" />
 	</ItemGroup>
 </Project>
