@@ -859,3 +859,6 @@ FodyWeavers.xsd
 */Content/**
 !Content/.gitkeep
 !Content/Readme.md
+
+# FNA generate files
+FNA/obj_core

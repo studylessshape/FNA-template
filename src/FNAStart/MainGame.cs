@@ -25,7 +25,7 @@ namespace FNAStart
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             fontSystem = new();
-            fontSystem.AddFont(System.IO.File.ReadAllBytes(@"Content\Font.ttf"));
+            //fontSystem.AddFont(System.IO.File.ReadAllBytes(@"Content\Font.ttf"));
         }
 
         protected override void LoadContent()
@@ -55,11 +55,11 @@ namespace FNAStart
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            SpriteFontBase font18 = fontSystem.GetFont(18);
+            //SpriteFontBase font18 = fontSystem.GetFont(18);
 
-            spriteBatch.Begin();
-            spriteBatch.DrawString(font18, "Some Text", Vector2.One, Color.White);
-            spriteBatch.End();
+            //spriteBatch.Begin();
+            //spriteBatch.DrawString(font18, "Some Text", Vector2.One, Color.White);
+            //spriteBatch.End();
 
             base.Draw(gameTime);
         }
