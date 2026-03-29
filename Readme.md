@@ -24,6 +24,7 @@ Then download CI artifacts and decompressed in [fnalibs](./fnalibs) folder.
 **Need Install**
 1. `clang` or `gcc`;
 2. `libsdl3`: `libsdl3-dev`,`libsdl3-ttf-dev`,`libsdl3-image-dev`
+3. `libfaudio-dev` or `libfaudio0`: [FAudio](https://github.com/FNA-XNA/FAudio) need these to play song or sound effects.
 
 > If use `sdl2`, replace the `sdl3` to `sdl2`
 
